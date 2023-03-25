@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.0ccb4907.css",
-    "main.js": "/static/js/main.7c5a020d.js",
-    "static/js/787.c1112931.chunk.js": "/static/js/787.c1112931.chunk.js",
-    "index.html": "/index.html",
-    "main.0ccb4907.css.map": "/static/css/main.0ccb4907.css.map",
-    "main.7c5a020d.js.map": "/static/js/main.7c5a020d.js.map",
-    "787.c1112931.chunk.js.map": "/static/js/787.c1112931.chunk.js.map"
+    "main.css": "/medfolio_landing/static/css/main.0ccb4907.css",
+    "main.js": "/medfolio_landing/static/js/main.ed9bb382.js",
+    "static/js/787.c1112931.chunk.js": "/medfolio_landing/static/js/787.c1112931.chunk.js",
+    "index.html": "/medfolio_landing/index.html",
+    "main.0ccb4907.css.map": "/medfolio_landing/static/css/main.0ccb4907.css.map",
+    "main.ed9bb382.js.map": "/medfolio_landing/static/js/main.ed9bb382.js.map",
+    "787.c1112931.chunk.js.map": "/medfolio_landing/static/js/787.c1112931.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0ccb4907.css",
-    "static/js/main.7c5a020d.js"
+    "static/js/main.ed9bb382.js"
   ]
 }
