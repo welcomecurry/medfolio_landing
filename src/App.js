@@ -1,11 +1,11 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Home from "../src/pages/Home/Home"
 import Builder from "../src/pages/Builder/Builder"
 import './App.css';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="App">
           <div style={{ paddingBottom: "60px" }}>
               <Routes>
@@ -14,7 +14,7 @@ function App() {
               </Routes>
           </div>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
