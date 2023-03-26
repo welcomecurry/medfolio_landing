@@ -482,6 +482,7 @@ the website, in dark theme
   border-radius: 0.5rem;
   font-weight: var(--font-medium);
   transition: 0.3s;
+  text-decoration: none;
 }
 
 .button-prev {
@@ -494,6 +495,7 @@ the website, in dark theme
   transition: 0.3s;
   margin-top: 1rem;
   color: rgb(119, 85, 204);
+  text-decoration: none;
 }
 
 .last-button {
@@ -504,6 +506,7 @@ the website, in dark theme
   border-radius: 0.5rem;
   font-weight: var(--font-medium);
   transition: 0.3s;
+  text-decoration: none;
 }
 
 .nav-button {
@@ -514,6 +517,7 @@ the website, in dark theme
   border-radius: 0.5rem;
   font-weight: var(--font-medium);
   transition: 0.3s;
+  text-decoration: none;
 }
 
 .button:hover {

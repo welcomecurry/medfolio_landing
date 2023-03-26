@@ -19,7 +19,6 @@ function Home() {
 // sr.reveal(`.steps__card, .product__card, .questions__group, .footer`, { interval: 100 });
   return (
 <>
-  {/* Mirrored from jbramirez03.github.io/Plant-site/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 22 Mar 2023 05:45:42 GMT */}
   {/* Added by HTTrack */}
   <meta httpEquiv="content-type" content="text/html;charset=utf-8" />
   {/* /Added by HTTrack */}

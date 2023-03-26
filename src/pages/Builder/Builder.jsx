@@ -16,17 +16,41 @@ function Builder() {
   };
 
   return (
+    
     <div className="file-uploader-container">
-      <div className="file-uploader-left">
+        <link
+            href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css"
+            rel="stylesheet"
+        />
+      <div className="upload-section">
+        <h1>Upload Resume/CV</h1>
+        <a href="" className="button button--flex">
+           Select <i className="ri-upload-line" />
+        </a>
+
         <input
           type="file"
-          className="file-uploader-input"
+          className="button button--flex"
           onChange={handleFileUpload}
         />
+
+        <div>
+            <p>Or</p>
+            <a href="" className="button button--flex">
+           Connect to LinkedIn <i className="ri-linkedin-box-fill" />
+        </a>
+
+        <input
+          type="file"
+          className="button button--flex"
+          onChange={handleFileUpload}
+        />
+        </div>
       </div>
-      <div className="file-uploader-right">
+      <div className="">
+        <p>Your portfolio created by artificial intelligence will appear here.</p>
         {fileContent && (
-          <pre className="file-uploader-pre">{fileContent}</pre>
+          <pre className="">{fileContent}</pre>
         )}
       </div>
     </div>
