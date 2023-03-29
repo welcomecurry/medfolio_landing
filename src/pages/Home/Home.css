@@ -483,6 +483,7 @@ the website, in dark theme
   font-weight: var(--font-medium);
   transition: 0.3s;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .button-prev {

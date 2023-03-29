@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
+import axios from "axios";
 import './Builder.css';
+import { parseResume } from '../../resumeAPI';
+import Selector from '../../components/Selector.jsx/Selector';
 
 function Builder() {
   const [fileContent, setFileContent] = useState('');
+  const [parsedData, setParsedData] = useState(null);
+
 
   const handleFileUpload = (event) => {
     const file = event.target.files[0];
-    const reader = new FileReader();
-
-    reader.onload = (event) => {
-      setFileContent(event.target.result);
-    };
-
-    reader.readAsText(file);
+    const form = new FormData()
+    form.append('file', file)
+    parseResume(file)
   };
 
   return (
@@ -24,27 +25,20 @@ function Builder() {
         />
       <div className="upload-section">
         <h1>Upload Resume/CV</h1>
-        <a href="" className="button button--flex">
-           Select <i className="ri-upload-line" />
-        </a>
-
-        <input
-          type="file"
-          className="button button--flex"
-          onChange={handleFileUpload}
-        />
+        <div style={{padding: "1rem"}}>
+          <label class="button button--flex">
+            <input type="file" onChange={handleFileUpload}/>
+            Select  <i className="ri-upload-line" />
+          </label>
+        </div>
 
         <div>
             <p>Or</p>
             <a href="" className="button button--flex">
-           Connect to LinkedIn <i className="ri-linkedin-box-fill" />
+            Connect to LinkedIn <i className="ri-linkedin-box-fill" />
         </a>
 
-        <input
-          type="file"
-          className="button button--flex"
-          onChange={handleFileUpload}
-        />
+        <Selector></Selector>
         </div>
       </div>
       <div className="">

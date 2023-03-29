@@ -1,0 +1,10 @@
+.template-icon {
+    width: 10rem;
+    border-radius: 10%;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+.template-icon:hover {
+    opacity: 50%;
+}
