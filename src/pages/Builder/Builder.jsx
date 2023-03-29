@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
+import { storage } from "../../firebase";
 import axios from "axios";
 import './Builder.css';
 import { parseResume } from '../../resumeAPI';
@@ -8,16 +10,38 @@ function Builder() {
   const [fileContent, setFileContent] = useState('');
   const [parsedData, setParsedData] = useState(null);
 
+  const [progress, setProgress] = useState(0);
 
   const handleFileUpload = (event) => {
     const file = event.target.files[0];
-    const form = new FormData()
-    form.append('file', file)
-    parseResume(file)
+    uploadFiles(file);
+  }
+
+  const uploadFiles = (file) => {
+    //
+    if (!file) return;
+    const storageRef = ref(storage, `files/${file.name}`);
+    const uploadTask = uploadBytesResumable(storageRef, file);
+
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        const prog = Math.round(
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+        );
+        setProgress(prog);
+      },
+      (error) => console.log(error),
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+          console.log("File available at", downloadURL);
+          parseResume(downloadURL)
+        });
+      }
+    );
   };
 
   return (
-    
     <div className="file-uploader-container">
         <link
             href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css"
