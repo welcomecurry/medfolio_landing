@@ -85,24 +85,77 @@ function Builder() {
           Your portfolio created by artificial intelligence will appear here.
         </p>
         {parsedData && (
-          <div>
-            {Object.entries(parsedData).map(([sectionName, sectionData]) => (
-              <div key={sectionName}>
-                <h2>{sectionName}</h2>
-                {Object.entries(sectionData).map(([fieldName, fieldValue]) => (
-                  <div key={fieldName}>
-                    <p>
-                      {fieldName}:{" "}
-                      {typeof fieldValue === "object"
-                        ? JSON.stringify(fieldValue)
-                        : fieldValue}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            ))}
+  <div style={{height: "5rem"}}>
+    {Object.entries(parsedData).map(([sectionName, sectionData]) => (
+      <div key={sectionName}>
+        <h3>{sectionName}</h3>
+        {Object.entries(sectionData).map(([fieldName, fieldValue]) => (
+          <div key={fieldName}>
+            <h4>{fieldName}</h4>
+            {typeof fieldValue === "object" && fieldValue !== null ? (
+              Array.isArray(fieldValue) ? (
+                <ul>
+                  {fieldValue.map((item, index) => (
+                    <li key={index}>
+                      {typeof item === "object" ? (
+                        <div>
+                          <h5>Item {index + 1}</h5>
+                          <p>{JSON.stringify(item)}</p>
+                        </div>
+                      ) : (
+                        item
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <div>
+                  {Object.entries(fieldValue).map(([key, value]) => (
+                    <div key={key}>
+                      <h5>{key}</h5>
+                      {typeof value === "object" && value !== null ? (
+                        Array.isArray(value) ? (
+                          <ul>
+                            {value.map((item, index) => (
+                              <li key={index}>
+                                {typeof item === "object" ? (
+                                  <div>
+                                    <h6>Item {index + 1}</h6>
+                                    <p>{JSON.stringify(item)}</p>
+                                  </div>
+                                ) : (
+                                  item
+                                )}
+                              </li>
+                            ))}
+                          </ul>
+                        ) : (
+                          <div>
+                            {Object.entries(value).map(([subKey, subValue]) => (
+                              <div key={subKey}>
+                                <h6>{subKey}</h6>
+                                <p>{typeof subValue === "object" && subValue !== null ? JSON.stringify(subValue) : subValue}</p>
+                              </div>
+                            ))}
+                          </div>
+                        )
+                      ) : (
+                        <p>{value}</p>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )
+            ) : (
+              <p>{fieldValue}</p>
+            )}
           </div>
-        )}
+        ))}
+      </div>
+    ))}
+  </div>
+)}
+
 
         {!parsedData && fileUploaded && (
           <><BuildLoader /><p>Building...</p></>)}
