@@ -1,0 +1,63 @@
+.manual-form {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+  }
+  
+  .manual-form .collapsible-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #f2f2f2;
+    padding: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .manual-form .collapsible-header:hover {
+    background-color: #ddd;
+  }
+  
+  .manual-form .collapsible-header__title {
+    font-size: 1rem;
+    margin: 0;
+    margin-right: 0.5rem;
+  }
+  
+  .manual-form .collapsible-header__toggle {
+    margin-left: auto;
+    font-size: 1rem;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .manual-form .collapsible-header__toggle:focus {
+    outline: none;
+  }
+  
+  .manual-form .collapsible-header__toggle:hover {
+    transform: rotateZ(180deg);
+  }
+  
+  .manual-form .collapsible-content {
+    padding: 1rem;
+    background-color: #fff;
+    transition: max-height 0.3s ease-in-out;
+    overflow: hidden;
+  }
+  
+  .manual-form .collapsible-content > * {
+    margin-bottom: 1rem;
+  }
+  
+  .manual-form .collapsible-content__title {
+    font-size: 1rem;
+    margin: 0 0 1rem;
+  }
+  

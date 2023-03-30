@@ -10,7 +10,7 @@ export const parseResume = async (file) => {
         response_as_dict: true,
         attributes_as_list: false,
         show_original_response: false,
-        providers: 'affinda',
+        providers: 'affinda,hireability',
         file_url: file
       })
     };
